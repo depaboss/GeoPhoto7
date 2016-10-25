@@ -1,12 +1,12 @@
 (function(){
   'use strict';
 
-  angular.module('App')
+  angular.module('App.table')
     .controller('TableController', TableController);
 
-    TableController.$inject=[];
+    TableController.$inject=['TableService'];
 
-    function TableController(){
+    function TableController(TableService){
       var vm = this;
 
       vm.users = [{

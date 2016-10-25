@@ -1,19 +1,28 @@
 (function(){
   'use strict';
 
-  var App = angular.module('App',[]);
-  
+  var App = angular.module('App',[
+    'App.table'
+  ]);
+
  })();
 
 (function(){
   'use strict';
 
-  angular.module('App')
+  angular.module('App.table', []);
+
+})();
+
+(function(){
+  'use strict';
+
+  angular.module('App.table')
     .controller('TableController', TableController);
 
-    TableController.$inject=[];
+    TableController.$inject=['TableService'];
 
-    function TableController(){
+    function TableController(TableService){
       var vm = this;
 
       vm.users = [{
@@ -69,6 +78,23 @@
         });
       }
     }
+})();
+
+(function(){
+  'use strict';
+
+  angular.module('App.table')
+    .factory('TableService', TableService);
+
+    TableService.$inject = [];
+
+    function TableService(){
+
+      return {
+
+      }
+    }
+
 })();
 
 (function(){
