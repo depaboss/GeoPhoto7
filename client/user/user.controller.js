@@ -1,13 +1,6 @@
 (function(){
   'use strict';
 
-  var App = angular.module('App',[]);
-  
- })();
-
-(function(){
-  'use strict';
-
   angular.module('App')
     .controller('UserController', UserController);
 
@@ -20,5 +13,3 @@
     }
 
 })();
-
-//# sourceMappingURL=build/App/bundle.js.map

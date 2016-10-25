@@ -10,13 +10,17 @@
     <meta name="author" content="Christian Pengu">
     <meta name="application-name" content="Artoo Campus">
     <meta name="viewport" content="width=device-width">
-    
+
     <title>Artoo Campus</title>
     <!-- install bootstrap.css and load it -->
   </head>
   <body ng-app="App"> <!-- bootstrap the app with your module -->
-    <div ng-init="vm.foo='Hooray! AngularJS is up and running!'" ng-bind="vm.foo"></div>
-    {{2+2}}
+
+<div ng-controller="UserController as vm">
+
+</div>
+
+
     <script src="vendors/angular/angular.js"></script>
     <script src="App/bundle.js"></script>
   </body>
