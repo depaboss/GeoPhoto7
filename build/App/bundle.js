@@ -20,9 +20,9 @@
   angular.module('App.table')
     .controller('TableController', TableController);
 
-    TableController.$inject=['TableService'];
+    TableController.$inject=[];
 
-    function TableController(TableService){
+    function TableController(){
       var vm = this;
 
       vm.users = [{
