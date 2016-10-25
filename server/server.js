@@ -29,6 +29,8 @@ app.use('/', express.static(path.join(__dirname, '..', 'client')));
 app.use('/scripts', express.static(path.join(__dirname, '..', 'node_modules')));
 app.use('/bundle', express.static(path.join(__dirname, '..', 'build', 'App')));
 app.use('/vendor', express.static(path.join(__dirname, '..', 'build','vendors')));
+app.use('/App', express.static(path.join(__dirname, '..', 'build')));
+
 
 /////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////
