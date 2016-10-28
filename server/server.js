@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 app.use(require('serve-favicon')(path.join(__dirname,"..","client","favicon.ico")));
 
 //SERVE I FILE STATICI
-app.use('/', express.static(path.join(__dirname, '..', 'client')));
+app.use('/', express.static(path.join(__dirname, '..', ' client')));
 
 //SERVE GLI SCRIPT DENTRO NODE MODULES, PER IL CLIENT
 app.use('/scripts', express.static(path.join(__dirname, '..', 'node_modules')));

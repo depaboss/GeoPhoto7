@@ -6,7 +6,7 @@
     function config($routeProvider){
       $routeProvider
         .when('/table', {
-          templateUrl:'table/template/table.template.html',
+          templateUrl:'/App/view/table/template/table.template.html',
           controller:'TableController',
           controllerAs: 'vm'
         })

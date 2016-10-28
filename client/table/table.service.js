@@ -26,10 +26,23 @@
       }];
 
       return {
-        myfunction : myfunction
+        myfunction : myfunction,
+        editUserService: editUserService
+      }
+
+      function editUserService(userEdit){
+        users.map(function(index, value){
+          if (index.id == userEdit.id) {
+            index.nome = userEdit.nome;
+            index.cognome = userEdit.cognome;
+            index.age = userEdit.age;
+          }
+        })
+        return
       }
 
       function myfunction(){
+        console.log('sono ioooo');
         return users
       }
 

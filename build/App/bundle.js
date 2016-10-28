@@ -24,7 +24,7 @@
     function config($routeProvider){
       $routeProvider
         .when('/table', {
-          templateUrl:'table/template/table.template.html',
+          templateUrl:'/App/view/table/template/table.template.html',
           controller:'TableController',
           controllerAs: 'vm'
         })
@@ -41,12 +41,31 @@
 
     function TableController(TableService){
       var vm = this;
+      vm.userInfo= {};
 
       vm.getUsers = function(){
         vm.users = TableService.myfunction();
+      }
+
+      vm.getUser = function(user){
+        vm.userInfo = angular.copy(user);
+      }
+
+      vm.macome = function(){
         console.log(vm.users);
       }
 
+      vm.editUser = function(){
+        console.log(TableService.editUserService(vm.userInfo));
+        debugger;
+        console.log(vm.users);
+        TableService.editUserService(vm.userInfo);
+        console.log(vm.users);
+
+        debugger;
+
+        vm.userInfo = {};
+      }
 
     }
 })();
@@ -79,10 +98,23 @@
       }];
 
       return {
-        myfunction : myfunction
+        myfunction : myfunction,
+        editUserService: editUserService
+      }
+
+      function editUserService(userEdit){
+        users.map(function(index, value){
+          if (index.id == userEdit.id) {
+            index.nome = userEdit.nome;
+            index.cognome = userEdit.cognome;
+            index.age = userEdit.age;
+          }
+        })
+        return
       }
 
       function myfunction(){
+        console.log('sono ioooo');
         return users
       }
 
