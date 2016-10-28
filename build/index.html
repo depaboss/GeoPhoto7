@@ -15,58 +15,13 @@
   </head>
   <body ng-app="App"> <!-- bootstrap the app with your module -->
 
-  <div ng-controller="TableController as vm">
-    <div ng-repeat="user in vm.users track by $index">
-      <span ng-click="vm.editUser(user, $index);" class="col-md-3 col-sm-3 col-lg-3 col-xs-3 tableClass" ng-bind="user.nome"></span>
+<div ng-view>
 
-      <span ng-click="vm.editUser(user, $index);" class="col-md-3 col-sm-3 col-lg-3 col-xs-3 tableClass" ng-bind="user.cognome"></span>
-      <span ng-click="vm.editUser(user, $index);" class="col-md-3 col-sm-3 col-lg-3 col-xs-3 tableClass" ng-bind="user.age"></span>
-      <span ng-click="vm.delete(user.id)" class="col-md-3 col-sm-3 col-lg-3 col-xs-3 tableClass"> x </span>
-    </div>
-    <br>
-    <div class=" col-md-12 col-lg-12 col-sm-12 marginTop1em">
-      <!-- <input type="text" name="name" ng-model="vm.newUser.nome" placeholder="nome">
-      <input type="text" name="name" ng-model="vm.newUser.cognome" placeholder="cognome">
-      <input type="number" name="name" ng-model="vm.newUser.age" placeholder="age"> -->
-
-      <form class="form-horizontal">
-        <fieldset>
-          <div class="form-group">
-            <div class="col-md-4 col-md-offset-4">
-            <input id="textinput" name="textinput" type="text" placeholder="nome" ng-model="vm.newUser.nome" class="form-control input-md">
-            </div>
-          </div>
-
-          <div class="form-group">
-            <div class="col-md-4 col-md-offset-4">
-            <input id="textinput" name="textinput" type="text" placeholder="cognome" ng-model="vm.newUser.cognome"  class="form-control input-md">
-            </div>
-          </div>
-
-          <!-- Text input-->
-          <div class="form-group">
-            <div class="col-md-4 col-md-offset-4">
-            <input id="textinput" name="textinput" type="number" placeholder="age" ng-model="vm.newUser.age"  class="form-control input-md">
-            </div>
-          </div>
-
-          <!-- Button -->
-          <div class="form-group">
-            <div class="col-md-4 col-md-offset-4">
-              <button id="singlebutton" name="singlebutton" class="btn btn-primary" ng-click="vm.save(vm.newUser);">Save</button>
-            </div>
-          </div>
-
-          </fieldset>
-        </form>
-
-
-
-    </div>
-  </div>
+</div>
 
     <link rel="stylesheet" type="text/css" href="App/App/style.css">
     <script src="vendor/angular/angular.js"></script>
+    <script src="vendor/angular-route/angular-route.js"></script>
     <script src="bundle/bundle.js"></script>
     <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css" >
   </body>

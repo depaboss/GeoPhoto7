@@ -2,6 +2,8 @@
   'use strict';
 
   var App = angular.module('App',[
+    'ngRoute',
+
     'App.table'
   ]);
 
@@ -16,16 +18,50 @@
 
 (function(){
   'use strict';
+  angular.module('App.table')
+    .config(config);
+
+    function config($routeProvider){
+      $routeProvider
+        .when('/table', {
+          templateUrl:'table/template/table.template.html',
+          controller:'TableController',
+          controllerAs: 'vm'
+        })
+    }
+})();
+
+(function(){
+  'use strict';
 
   angular.module('App.table')
     .controller('TableController', TableController);
 
-    TableController.$inject=[];
+    TableController.$inject=['TableService'];
 
-    function TableController(){
+    function TableController(TableService){
       var vm = this;
 
-      vm.users = [{
+      vm.getUsers = function(){
+        vm.users = TableService.myfunction();
+        console.log(vm.users);
+      }
+
+
+    }
+})();
+
+(function(){
+  'use strict';
+
+  angular.module('App.table')
+    .factory('TableService', TableService);
+
+    TableService.$inject = [];
+
+    function TableService(){
+
+      var users = [{
         'id'  : 0,
         'nome' : 'Christian',
         'cognome': 'Pengu',
@@ -40,59 +76,16 @@
         'nome' : 'Luca',
         'cognome': 'Bianchi',
         'age': 30
-      }
-    ];
-
-    vm.newUser = {};
-      vm.editUser = function(params){
-        vm.newUser.nome = params.nome;
-        vm.newUser.cognome = params.cognome;
-        vm.newUser.id = params.id;
-        vm.newUser.age = params.age;
-      }
-
-      vm.save = function(params){
-        console.log(params);
-
-        if(!params.nome)return
-        if(params.id) return vm.edit(params);
-
-        params.id = vm.users.length +1;
-        vm.users.push(params);
-        return vm.newUser = {};
-      }
-
-      vm.edit = function(params){
-        // params.id = vm.users.length +1;
-        vm.users.map(function(index, value){
-          console.log(params.id);
-          if(index.id === params.id)return vm.users[value] = params;
-        });
-        return vm.newUser = {};
-      }
-
-      vm.delete = function(params){
-        vm.users.map(function(index){
-          if(index.id === params){
-            return vm.users.pop(params);}
-        });
-      }
-    }
-})();
-
-(function(){
-  'use strict';
-
-  angular.module('App.table')
-    .factory('TableService', TableService);
-
-    TableService.$inject = [];
-
-    function TableService(){
+      }];
 
       return {
-
+        myfunction : myfunction
       }
+
+      function myfunction(){
+        return users
+      }
+
     }
 
 })();
