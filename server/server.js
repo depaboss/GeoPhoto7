@@ -17,6 +17,7 @@ app.use(bodyParser.json());
 
 app.use(require('serve-favicon')(path.join(__dirname,"..","client","favicon.ico")));
 
+
 app.use('/', express.static(path.join(__dirname, '..', 'client')));
 
 app.use('/scripts', express.static(path.join(__dirname, '..', 'node_modules')));
@@ -25,8 +26,9 @@ app.use('/vendor', express.static(path.join(__dirname, '..', 'build','vendors'))
 app.use('/App', express.static(path.join(__dirname, '..', 'build')));
 app.use('/view', express.static(path.join(__dirname, '..', 'build', 'view')));
 
+//API
+app.use('/planet',require('./planet'));
 
-//TODO API
 
 app.get('/*',function(req, res){
   res.sendFile(path.join(__dirname,"..","build","index.html"));

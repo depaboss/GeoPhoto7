@@ -1,0 +1,94 @@
+<div  class="distribution-map" ng-init="vm.init();">
+    <?xml version="1.0" encoding="utf-8"?>
+    <svg version="1.1" id="Planet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+       viewBox="0 0 1440 897.2" style="enable-background:new 0 0 1440 897.2;" xml:space="preserve">
+        <g id="Sud_America">
+          <path id="Peru_1" class="st1"/>
+          <path id="Argentina_1" class="st1"/>
+          <path id="Brasile_1" class="st1"/>
+          <path id="Venezuela_1" class="st1"/>
+        </g>
+        <g id="Africa">
+          <path id="Congo_1" class="st1"/>
+          <path id="Egitto_1" class="st1"/>
+          <path id="Africa_Del_Nord_1" class="st1"/>
+          <path id="Africa_Del_Sud_1"class="st1"/>
+          <path id="Madagascar_1" class="st1"/>
+          <path id="Africa_Orientale_1"class="st1"/>
+        </g>
+        <g id="Australia">
+          <path id="Australia_Orientale_1" class="st1"/>
+          <path id="Nuova_Guinea_1" class="st1"/>
+          <path id="Indonesia0" class="st1"/>
+          <path id="Indonesia1" class="st1"/>
+          <path id="Indonesia2" class="st1"/>
+          <path id="Indonesia3" class="st1"/>
+          <path id="Indonesia4" class="st1"/>
+          <path id="Indonesia5" class="st1"/>
+          <path id="Indonesia6" class="st1"/>
+          <path id="Australia_Occidentale_1" class="st1"/>
+        </g>
+        <g id="Nord_America">
+          <path id="Stati_Uniti_Occidentali_1" class="st1"/>
+          <path id="America_Centrale_1" class="st1"/>
+          <path id="Stati_Uniti_Orientali_1" class="st1"/>
+          <path id="Quebec_1" class="st1"/>
+          <path id="Ontario_1" class="st1"/>
+          <path id="Alberta_1" class="st1"/>
+          <path id="Alaska_1" class="st1"/>
+          <path id="Territori_del_Nord_Ovest_1" class="st1"/>
+          <path id="Groenlandia_1" class="st1"/>
+        </g>
+        <g id="Europa">
+          <path id="Europa_Occidentale_1" class="st1"/>
+          <path id="Europa_Meridionale_1" class="st1"/>
+          <path id="Europa_Settentrionale_1" class="st1"/>
+          <path id="Gran_Bretagna_1" class="st1"/>
+          <path id="Islanda_1" class="st1"/>
+          <path id="Scandinavia_1" class="st1"/>
+          <path id="Ucraina_1" class="st1"/>
+        </g>
+        <g id="Asia">
+          <path id="Urali_1" class="st1"/>
+          <path id="Afghanistan_1" class="st1"/>
+          <path id="Medio_Oriente_1" class="st1"/>
+          <path id="India_1" class="st1"/>
+          <path id="Siam_1" class="st1"/>
+          <path id="Cina_1" class="st1"/>
+          <path id="Mongolia_1" class="st1"/>
+          <path id="Siberia_1" class="st1"/>
+          <path id="Cita_1" class="st1"/>
+          <path id="Jacuzia_1" class="st1"/>
+          <path id="Kamchatka_1" class="st1"/>
+          <path id="Giappone_1" class="st1"/>
+        </g>
+    </svg>
+
+    <button ng-if="vm.popup ===true" class="map-point" style="top:{{vm.Europa_Meridionale.top}}px;left:{{vm.Europa_Meridionale.left}}px">
+        <div class="content">
+            <div class="centered-y">
+                <h2>A Place</h2>
+                <p>mio</p>
+            </div>
+        </div>
+    </button>
+    <button ng-if="vm.popup ===true" class="map-point" style="top:35%;left:50%">
+        <div class="content">
+            <div class="centered-y">
+                <h2>Another Place</h2>
+                <p>Lorem ipsum something something</p>
+            </div>
+        </div>
+    </button>
+    <button ng-if="vm.popup ===true" class="map-point" style="top:76%;left:82.5%">
+        <div class="content">
+            <div class="centered-y">
+                <h2>Marauder Town</h2>
+                <p>I solemnly swear that I am up to no good</p>
+            </div>
+        </div>
+    </button>
+  <!-- <input id="img1" type="file" name="some_name" value=""> -->
+  <input type="file" accept="image/gif, image/jpeg, image/png" id="image" class="upload" />
+<span id="makeAndModel"></span>
+</div>
